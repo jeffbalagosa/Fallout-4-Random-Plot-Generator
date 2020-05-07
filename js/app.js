@@ -46,6 +46,11 @@ for (let i = 0; i < majorFactions.length; i++) {
     mainSidekick === 'Paladin Danse'
   ) {
     loyalty = listPicker(majorFactions);
+  } else if (
+    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'X6-88') ||
+    mainSidekick === 'Deacon'
+  ) {
+    loyalty = listPicker(majorFactions);
   }
 }
 
