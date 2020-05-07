@@ -1,0 +1,29 @@
+h1 {
+  font-family: 'Sigmar One', cursive;
+}
+
+.jumbotron {
+  padding: 0;
+}
+.header-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container h1 p {
+  z-index: 1;
+  position: relative;
+}
+
+.header-container p {
+  font-weight: 800;
+}
+
+.header-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.2;
+}

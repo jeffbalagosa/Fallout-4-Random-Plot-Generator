@@ -6,4 +6,4 @@ Second sub goal: Randomize player's sidekick.
 Done.
 3rd sub goal:  Validate sidekick.  Some sidekicks are incompatible with faction loyalty.
 Done.
-4th sub goal: Randomize preferred weapon type.
+4th sub goal: Set generated picture to match sex
