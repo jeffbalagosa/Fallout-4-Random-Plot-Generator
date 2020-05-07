@@ -23,18 +23,16 @@ const companions = [
 
 const combatStyles = ['Stealthy Assassin', 'Guns Blazing!'];
 
-let loyalty = listPicker(majorFactions);
-const mainSidekick = listPicker(companions);
-const combatStyle = listPicker(combatStyles);
-
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
 
 console.log(`Protagonist: ${listPicker(sex)}`);
+const mainSidekick = listPicker(companions);
 
 // check if loyalty is compatible with mainsideKick
+let loyalty = listPicker(majorFactions);
 for (let i = 0; i < majorFactions.length; i++) {
   if (
     (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
@@ -56,4 +54,6 @@ for (let i = 0; i < majorFactions.length; i++) {
 
 console.log(`Loyalty: ${loyalty}`);
 console.log(`Main Sidekick: ${mainSidekick}`);
+
+const combatStyle = listPicker(combatStyles);
 console.log(`Combat Style: ${combatStyle}`);
