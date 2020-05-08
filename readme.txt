@@ -1,1 +1,1 @@
-Just a fun little side project to practice what I've learned so far at Treehouse's Front End Web Developer Tech Degree.  Enjoy
+Just a fun little side project to practice what I've learned so far at Treehouse's Front End Web Developer Tech Degree.  Enjoy!
