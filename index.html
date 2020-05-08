@@ -37,20 +37,26 @@
         </div>
       </div>
     </header>
-    <main class="container">
-      <article class="card shadow" style="width: 50%;">
-        <img
-          class="card-img-top shadow"
-          src="img/male-character.png"
-          alt="Fallout 4 Character"
-        />
+    <main class="container d-flex justify-content-between">
+      <article class="card shadow">
+        <div class="character-img"></div>
         <div class="card-body">
-          <h5 class="card-title">Starter Plot</h5>
-          <dl id="randomPlot" class="card-text"></dl>
-          <a href="#" class="btn btn-primary">Reroll</a>
+          <dl class="card-text random-plot"></dl>
+          <button id="reloadDiv" class="btn-success">Reroll</button>
+        </div>
+      </article>
+      <article #id="here" class="card shadow">
+        <div class="character-img"></div>
+        <div class="card-body">
+          <dl class="card-text random-plot"></dl>
         </div>
       </article>
     </main>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
     <!-- Optional Bootstrap JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

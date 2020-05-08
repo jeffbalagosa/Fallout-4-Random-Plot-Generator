@@ -33,7 +33,7 @@ function listPicker(array) {
 
 // check if loyalty is compatible with mainsideKick
 
-for (let i = 0; i < majorFactions.length; i++) {
+for (let i = 0; i < majorFactions.length; i += 1) {
   if (
     (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
     mainSidekick === 'Paladin Danse'
@@ -52,6 +52,18 @@ for (let i = 0; i < majorFactions.length; i++) {
   }
 }
 
-$('#randomPlot').html(
+for (let i = 0; i < sex.length; i += 1) {
+  if (protagonist === 'Female') {
+    $('.character-img').html(
+      `<img class="card-img-top shadow" src="img/female-character.png" alt="Fallout 4 Character"/>`
+    );
+  } else {
+    $('.character-img').html(
+      `<img class="card-img-top shadow" src="img/male-character.png" alt="Fallout 4 Character"/>`
+    );
+  }
+}
+
+$('.random-plot').html(
   `<dt>Protagonist: </dt><dd>${protagonist}</dd><dt>Loyalty: </dt><dd>${loyalty}</dd><dt>Main Sidekick: </dt><dd>${mainSidekick}</dd><dt>Combat Style: </dt><dd>${combatStyle}</dd>`
 );
