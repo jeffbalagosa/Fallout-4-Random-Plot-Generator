@@ -30,6 +30,18 @@ const preferredWeapons = [
   'Explosives',
   'Heavy Guns',
 ];
+const settlements = [
+  'Sanctuary Hills',
+  'Red Rocket Truck Stop',
+  'Abernathy Farm',
+  'Sunshine Tidings Co-op',
+  'Starlight Drive In',
+  'Tenpines Bluff',
+  'Graygarden',
+  'Oberland Station',
+  'Hangman’s Alley',
+  'Egret Tours Marina',
+];
 const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
@@ -40,25 +52,26 @@ let loyalty = listPicker(majorFactions);
 const combatStyle = listPicker(combatStyles);
 const protagonist = listPicker(sex);
 const preferredWeapon = listPicker(preferredWeapons);
+const mainSettlement = listPicker(settlements);
 
 // check if loyalty is compatible with mainsideKick
 
 for (let i = 0; i < majorFactions.length; i += 1) {
   if (
     (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
-    mainSidekick === 'Paladin Danse'
+    (loyalty === 'The Institute' && mainSidekick === 'Paladin Danse')
   ) {
     loyalty = listPicker(majorFactions);
   } else if (
     (loyalty === 'The Railroad' && mainSidekick === 'X6-88') ||
-    mainSidekick === 'Paladin Danse'
+    (loyalty === 'The Railroad' && mainSidekick === 'Paladin Danse')
   ) {
     loyalty = listPicker(majorFactions);
   } else if (loyalty === 'The Minute Men' && mainSidekick === 'X6-88') {
     loyalty = listPicker(majorFactions);
   } else if (
     (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'X6-88') ||
-    mainSidekick === 'Deacon'
+    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'Deacon')
   ) {
     loyalty = listPicker(majorFactions);
   }
@@ -81,6 +94,8 @@ $('.random-plot').html(
   <dd>${protagonist}</dd>
   <dt>Loyalty: </dt>
   <dd>${loyalty}</dd>
+  <dt>Base of Opperations: </dt>
+  <dd>${mainSettlement}</dd>
   <dt>Main Sidekick: </dt>
   <dd>${mainSidekick}</dd>
   <dt>Preferred Weapon Type: </dt>
