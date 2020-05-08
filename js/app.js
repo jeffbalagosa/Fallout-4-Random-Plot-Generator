@@ -20,16 +20,26 @@ const companions = [
   'Strong',
   'X6-88',
 ];
-const combatStyles = ['Stealthy Assassin', 'Guns Blazing!'];
-const mainSidekick = listPicker(companions);
-let loyalty = listPicker(majorFactions);
-const combatStyle = listPicker(combatStyles);
-const protagonist = listPicker(sex);
-
+const preferredWeapons = [
+  'Unarmed',
+  'Mele',
+  'Automatic Rifles',
+  'Automatic Pistols',
+  'Non-Automatic Pistols',
+  'Non-Automatic Rifles',
+  'Explosives',
+  'Heavy Guns',
+];
+const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
+const mainSidekick = listPicker(companions);
+let loyalty = listPicker(majorFactions);
+const combatStyle = listPicker(combatStyles);
+const protagonist = listPicker(sex);
+const preferredWeapon = listPicker(preferredWeapons);
 
 // check if loyalty is compatible with mainsideKick
 
@@ -43,6 +53,8 @@ for (let i = 0; i < majorFactions.length; i += 1) {
     (loyalty === 'The Railroad' && mainSidekick === 'X6-88') ||
     mainSidekick === 'Paladin Danse'
   ) {
+    loyalty = listPicker(majorFactions);
+  } else if (loyalty === 'The Minute Men' && mainSidekick === 'X6-88') {
     loyalty = listPicker(majorFactions);
   } else if (
     (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'X6-88') ||
@@ -65,5 +77,5 @@ for (let i = 0; i < sex.length; i += 1) {
 }
 
 $('.random-plot').html(
-  `<dt>Protagonist: </dt><dd>${protagonist}</dd><dt>Loyalty: </dt><dd>${loyalty}</dd><dt>Main Sidekick: </dt><dd>${mainSidekick}</dd><dt>Combat Style: </dt><dd>${combatStyle}</dd>`
+  `<dt>Protagonist: </dt><dd>${protagonist}</dd><dt>Loyalty: </dt><dd>${loyalty}</dd><dt>Main Sidekick: </dt><dd>${mainSidekick}</dd><dt>Preferred Weapon Type: </dt><dd>${preferredWeapon}</dd><dt>Combat Style: </dt><dd>${combatStyle}</dd>`
 );
