@@ -77,5 +77,14 @@ for (let i = 0; i < sex.length; i += 1) {
 }
 
 $('.random-plot').html(
-  `<dt>Protagonist: </dt><dd>${protagonist}</dd><dt>Loyalty: </dt><dd>${loyalty}</dd><dt>Main Sidekick: </dt><dd>${mainSidekick}</dd><dt>Preferred Weapon Type: </dt><dd>${preferredWeapon}</dd><dt>Combat Style: </dt><dd>${combatStyle}</dd>`
+  `<dt>Protagonist: </dt>
+  <dd>${protagonist}</dd>
+  <dt>Loyalty: </dt>
+  <dd>${loyalty}</dd>
+  <dt>Main Sidekick: </dt>
+  <dd>${mainSidekick}</dd>
+  <dt>Preferred Weapon Type: </dt>
+  <dd>${preferredWeapon}</dd>
+  <dt>Combat Style: </dt>
+  <dd>${combatStyle}</dd>`
 );
