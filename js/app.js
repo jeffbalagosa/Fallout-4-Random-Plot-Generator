@@ -47,35 +47,33 @@ function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
-const mainSidekick = listPicker(companions);
 let loyalty = listPicker(majorFactions);
+let mainSidekick = listPicker(companions);
 const combatStyle = listPicker(combatStyles);
 const protagonist = listPicker(sex);
 const preferredWeapon = listPicker(preferredWeapons);
 const mainSettlement = listPicker(settlements);
 
 // check if loyalty is compatible with mainsideKick
-
+console.log('before compatibility check');
+console.log(mainSidekick);
+console.log(loyalty);
 for (let i = 0; i < majorFactions.length; i += 1) {
   if (
     (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
-    (loyalty === 'The Institute' && mainSidekick === 'Paladin Danse')
-  ) {
-    loyalty = listPicker(majorFactions);
-  } else if (
+    (loyalty === 'The Institute' && mainSidekick === 'Paladin Danse') ||
     (loyalty === 'The Railroad' && mainSidekick === 'X6-88') ||
-    (loyalty === 'The Railroad' && mainSidekick === 'Paladin Danse')
-  ) {
-    loyalty = listPicker(majorFactions);
-  } else if (loyalty === 'The Minute Men' && mainSidekick === 'X6-88') {
-    loyalty = listPicker(majorFactions);
-  } else if (
+    (loyalty === 'The Railroad' && mainSidekick === 'Paladin Danse') ||
     (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'X6-88') ||
-    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'Deacon')
+    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'Deacon') ||
+    (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
   ) {
-    loyalty = listPicker(majorFactions);
+    mainSidekick = listPicker(companions);
   }
 }
+console.log('after compatibility check');
+console.log(mainSidekick);
+console.log(loyalty);
 
 for (let i = 0; i < sex.length; i += 1) {
   if (protagonist === 'Female') {
