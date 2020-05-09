@@ -21,7 +21,7 @@ const companions = [
   'X6-88',
 ];
 const preferredWeapons = [
-  'Unarmed',
+  'Fisticuffs',
   'Mele',
   'Automatic Rifles',
   'Automatic Pistols',

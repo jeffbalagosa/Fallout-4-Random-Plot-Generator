@@ -26,6 +26,7 @@ header p {
   background-image: url('../img/pip-screen.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid #40dc23;
 }
 
 .footer {
