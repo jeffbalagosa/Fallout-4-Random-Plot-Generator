@@ -31,13 +31,13 @@ header p {
 }
 
 @media (min-width: 992px) {
-  .jumbotron {
+  .bg-dark-transparent {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 }
 @media (min-width: 1200px) {
-  .jumbotron {
+  .bg-dark-transparent {
     padding-top: 150px;
     padding-bottom: 150px;
   }
