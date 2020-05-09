@@ -18,6 +18,8 @@ header p {
 }
 
 .card {
+  background-color: black;
+  color: #40dc23;
   width: 50%;
 }
 
