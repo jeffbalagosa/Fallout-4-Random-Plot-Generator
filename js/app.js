@@ -41,13 +41,32 @@ const settlements = [
   'Oberland Station',
   'Hangman’s Alley',
   'Egret Tours Marina',
+  'Sommerville Place',
+  'Outpost Zimonja',
+  'Covenant',
+  'Taffington Boathouse',
+  'Greentop Nursery',
+  'The Slog',
+  'Finch Farm',
+  'Country Crossing',
+  'Coastal Cottage',
+  'Kingsport Lighthouse',
+  'Croup Manor',
+  'Nordhagen Beach',
+  'Jamiaca Plain',
+  'Murkwater Construction Site',
+  'Warwick Homestead',
+  'Spectacle Island',
+  'The Castle',
+  'Bunker Hill',
+  'Boston Airport',
 ];
 const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
-let loyalty = listPicker(majorFactions);
+const loyalty = listPicker(majorFactions);
 let mainSidekick = listPicker(companions);
 const combatStyle = listPicker(combatStyles);
 const protagonist = listPicker(sex);
