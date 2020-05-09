@@ -78,11 +78,11 @@ console.log(loyalty);
 for (let i = 0; i < sex.length; i += 1) {
   if (protagonist === 'Female') {
     $('.character-img').html(
-      `<img class="card-img-top shadow" src="img/female-character.png" alt="Fallout 4 Character"/>`
+      `<img class="card-img-top" src="img/female-character.png" alt="Fallout 4 Character"/>`
     );
   } else {
     $('.character-img').html(
-      `<img class="card-img-top shadow" src="img/male-character.png" alt="Fallout 4 Character"/>`
+      `<img class="card-img-top" src="img/male-character.png" alt="Fallout 4 Character"/>`
     );
   }
 }
