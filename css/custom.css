@@ -21,6 +21,11 @@ header p {
   width: 50%;
 }
 
+.card:hover {
+  color: #40dc23;
+  background-color: black;
+}
+
 .footer {
   margin-top: 2em;
   bottom: 0;
