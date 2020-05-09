@@ -23,7 +23,9 @@ header p {
 
 .card:hover {
   color: #40dc23;
-  background-color: black;
+  background-image: url('../img/pip-screen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .footer {
