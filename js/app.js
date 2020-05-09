@@ -55,9 +55,6 @@ const preferredWeapon = listPicker(preferredWeapons);
 const mainSettlement = listPicker(settlements);
 
 // check if loyalty is compatible with mainsideKick
-console.log('before compatibility check');
-console.log(mainSidekick);
-console.log(loyalty);
 for (let i = 0; i < majorFactions.length; i += 1) {
   if (
     (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
@@ -71,9 +68,6 @@ for (let i = 0; i < majorFactions.length; i += 1) {
     mainSidekick = listPicker(companions);
   }
 }
-console.log('after compatibility check');
-console.log(mainSidekick);
-console.log(loyalty);
 
 for (let i = 0; i < sex.length; i += 1) {
   if (protagonist === 'Female') {
