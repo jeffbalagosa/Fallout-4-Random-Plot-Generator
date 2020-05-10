@@ -100,7 +100,7 @@ for (let i = 0; i < sex.length; i += 1) {
   }
 }
 
-$('.random-plot').html(
+$('.character-attributes').html(
   `<dt>Protagonist: </dt>
   <dd>${protagonist}</dd>
   <dt>Loyalty: </dt>
