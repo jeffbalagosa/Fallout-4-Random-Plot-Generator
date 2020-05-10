@@ -19,6 +19,10 @@ const companions = [
   'Robert Joseph MacCready',
   'Strong',
   'X6-88',
+  'Ada (Automatron DLC)',
+  'Automatron (Automatron DLC)',
+  'Old Longfellow (Far Harbour DLC)',
+  'Fizztop Grille (Nuka-World DLC)',
 ];
 const preferredWeapons = [
   'Fisticuffs',
@@ -85,8 +89,8 @@ function specialArrayBuilder() {
   return array;
 }
 
+// build valid special array
 let special = [];
-
 do {
   special = specialArrayBuilder();
 } while (
@@ -109,12 +113,12 @@ const mainSettlement = listPicker(settlements);
 // check if loyalty is compatible with mainsideKick
 for (let i = 0; i < majorFactions.length; i += 1) {
   if (
-    (loyalty === 'The Institute' && mainSidekick === 'Deacon') ||
-    (loyalty === 'The Institute' && mainSidekick === 'Paladin Danse') ||
-    (loyalty === 'The Railroad' && mainSidekick === 'X6-88') ||
-    (loyalty === 'The Railroad' && mainSidekick === 'Paladin Danse') ||
-    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'X6-88') ||
-    (loyalty === 'The Brotherhood of Steel' && mainSidekick === 'Deacon') ||
+    (loyalty === 'The Institue' &&
+      (mainSidekick === 'Deacon' || mainSidekick === 'PaladinDance')) ||
+    (loyalty === 'The Railroad' &&
+      (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
+    (loyalty === 'The Brotherhood of Steel' &&
+      (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
     (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
   ) {
     mainSidekick = listPicker(companions);
@@ -136,24 +140,24 @@ for (let i = 0; i < sex.length; i += 1) {
 $('.character-attributes').html(
   `<div>
     <dl>
-      <dt>Protagonist </dt>
+      <dt>Protagonist</dt>
       <dd>${protagonist}</dd>
-      <dt>Loyalty </dt>
+      <dt>Loyalty</dt>
       <dd>${loyalty}</dd>
-      <dt>Base of Opperations </dt>
+      <dt>Base of Opperations</dt>
       <dd>${mainSettlement}</dd>
-      <dt>Main Sidekick </dt>
+      <dt>Main Sidekick</dt>
       <dd>${mainSidekick}</dd>
-      <dt>Preferred Weapon Type </dt>
+      <dt>Preferred Weapon Type</dt>
       <dd>${preferredWeapon}</dd>
-      <dt>Combat Style </dt>
+      <dt>Combat Style</dt>
       <dd>${combatStyle}</dd>
     </dl>
   </div>`
 );
 
 $('.character-attributes').append(
-  `<div>
+  `<div class="w-50 text-right">
     <dl>
       <dt>S.P.E.C.I.A.L.</dt>
       <dd>Strength: ${special[0]}</dd>
