@@ -60,6 +60,13 @@ const settlements = [
   'The Castle',
   'Bunker Hill',
   'Boston Airport',
+  'The Mechanist’s Lair (Automatron DLC)',
+  'Longfellow’s Cabin (Far Harbour DLC)',
+  'National Park Visitor’s Centre (Far Harbour DLC)',
+  'Dalton Farm (Far Harbour DLC)',
+  'Echo Lake Lumber (Far Harbour DLC)',
+  'Vault 88 (Vault-Tec Workshop DLC)',
+  'Nuka-World Red Rocket (Nuka-World DLC)',
 ];
 const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
 

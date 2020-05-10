@@ -42,6 +42,9 @@ header p {
   dl {
     font-size: 1.6em;
   }
+  button {
+    font-size: 1.6em;
+  }
 }
 @media (min-width: 992px) {
   .bg-dark-transparent {
