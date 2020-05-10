@@ -136,33 +136,33 @@ for (let i = 0; i < sex.length; i += 1) {
 $('.character-attributes').html(
   `<div>
     <dl>
-      <dt>Protagonist: </dt>
+      <dt>Protagonist </dt>
       <dd>${protagonist}</dd>
-      <dt>Loyalty: </dt>
+      <dt>Loyalty </dt>
       <dd>${loyalty}</dd>
-      <dt>Base of Opperations: </dt>
+      <dt>Base of Opperations </dt>
       <dd>${mainSettlement}</dd>
-      <dt>Main Sidekick: </dt>
+      <dt>Main Sidekick </dt>
       <dd>${mainSidekick}</dd>
-      <dt>Preferred Weapon Type: </dt>
+      <dt>Preferred Weapon Type </dt>
       <dd>${preferredWeapon}</dd>
-      <dt>Combat Style: </dt>
+      <dt>Combat Style </dt>
       <dd>${combatStyle}</dd>
     </dl>
   </div>`
 );
 
 $('.character-attributes').append(
-  `<div class = "text-right">
+  `<div>
     <dl>
-      <dt>S.P.E.C.I.A.L.: </dt>
-      <dd>Strength = ${special[0]}</dd>
-      <dd>Perception = ${special[1]}</dd>
-      <dd>Endurance = ${special[2]}</dd>
-      <dd>Charisma = ${special[3]}</dd>
-      <dd>Intelligence = ${special[4]}</dd>
-      <dd>Agility = ${special[5]}</dd>
-      <dd>Luck = ${special[6]}</dd>
+      <dt>S.P.E.C.I.A.L.</dt>
+      <dd>Strength: ${special[0]}</dd>
+      <dd>Perception: ${special[1]}</dd>
+      <dd>Endurance: ${special[2]}</dd>
+      <dd>Charisma: ${special[3]}</dd>
+      <dd>Intelligence: ${special[4]}</dd>
+      <dd>Agility: ${special[5]}</dd>
+      <dd>Luck: ${special[6]}</dd>
     </dl>
   </div>`
 );
