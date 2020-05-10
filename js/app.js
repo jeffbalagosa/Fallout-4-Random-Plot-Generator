@@ -78,14 +78,22 @@ function specialArrayBuilder() {
   return array;
 }
 
-const special = specialArrayBuilder();
+let special = [];
 
-const totalSpecial = special.reduce(function (a, b) {
-  return a + b;
-}, 0);
+do {
+  special = specialArrayBuilder();
+} while (
+  special.reduce(function (a, b) {
+    return a + b;
+  }, 0) !== 28
+);
 
 console.log(special);
-console.log(`Total SPECIAL = ${totalSpecial}`);
+console.log(
+  `Total Special = ${special.reduce(function (a, b) {
+    return a + b;
+  }, 0)}`
+);
 
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
