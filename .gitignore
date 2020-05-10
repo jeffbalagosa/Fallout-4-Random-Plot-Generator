@@ -1,2 +1,5 @@
 node_modules/
 goals.txt
+package-lock.json
+.eslintrc.json
+.prettierrc
