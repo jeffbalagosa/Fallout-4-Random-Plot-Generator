@@ -153,7 +153,7 @@ $('.character-attributes').html(
 );
 
 $('.character-attributes').append(
-  `<div>
+  `<div class = "text-right">
     <dl>
       <dt>S.P.E.C.I.A.L.: </dt>
       <dd>Strength = ${special[0]}</dd>
