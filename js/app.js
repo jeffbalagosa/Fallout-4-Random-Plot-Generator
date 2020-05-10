@@ -70,17 +70,22 @@ function getRandomSpecial(min, max) {
 }
 
 // generate random S.P.E.C.I.A.L. numbers
-const special = [];
-for (let i = 0; i < 7; i++) {
-  special.push(getRandomSpecial(1, 28));
+function specialArrayBuilder() {
+  const array = [];
+  for (let i = 0; i < 7; i++) {
+    array.push(getRandomSpecial(1, 28));
+  }
+  return array;
 }
 
-// const totalSpecial = special.reduce(function (a, b) {
-//   return a + b;
-// }, 0);
+const special = specialArrayBuilder();
+
+const totalSpecial = special.reduce(function (a, b) {
+  return a + b;
+}, 0);
 
 console.log(special);
-// console.log(`Total SPECIAL = ${totalSpecial}`);
+console.log(`Total SPECIAL = ${totalSpecial}`);
 
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
