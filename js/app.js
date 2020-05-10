@@ -62,6 +62,31 @@ const settlements = [
   'Boston Airport',
 ];
 const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
+
+function getRandomSpecial(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// generate random S.P.E.C.I.A.L. numbers
+const special = [
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+  getRandomSpecial(1, 28),
+];
+
+const totalSpecial = special.reduce(function (a, b) {
+  return a + b;
+}, 0);
+
+console.log(special);
+console.log(`Total SPECIAL = ${totalSpecial}`);
+
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
