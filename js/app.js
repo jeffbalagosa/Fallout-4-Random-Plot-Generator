@@ -114,18 +114,16 @@ function specialBuilder() {
 
 // check if loyalty is compatible with mainsideKick
 function companionChecker() {
-  for (let i = 0; i < majorFactions.length; i += 1) {
-    if (
-      (loyalty === 'The Institue' &&
-        (mainSidekick === 'Deacon' || mainSidekick === 'PaladinDance')) ||
-      (loyalty === 'The Railroad' &&
-        (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
-      (loyalty === 'The Brotherhood of Steel' &&
-        (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
-      (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
-    ) {
-      mainSidekick = listPicker(companions);
-    }
+  if (
+    (loyalty === 'The Institue' &&
+      (mainSidekick === 'Deacon' || mainSidekick === 'Paladin Danse')) ||
+    (loyalty === 'The Railroad' &&
+      (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
+    (loyalty === 'The Brotherhood of Steel' &&
+      (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
+    (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
+  ) {
+    mainSidekick = listPicker(companions);
   }
 }
 
@@ -139,6 +137,39 @@ function imgSetter() {
   }
 }
 
+function postBuild() {
+  $('.character-attributes').html(
+    `<div>
+      <dl>
+        <dt>Protagonist</dt>
+        <dd>${protagonist}</dd>
+        <dt>Main Sidekick</dt>
+        <dd>${mainSidekick}</dd>
+        <dt>Faction Loyalty</dt>
+        <dd>${loyalty}</dd>
+        <dt>Base of Opperations</dt>
+        <dd>${mainSettlement}</dd>
+        <dt>Preferred Weapon Type</dt>
+        <dd>${preferredWeapon}</dd>
+        <dt>Combat Style</dt>
+        <dd>${combatStyle}</dd>
+      </dl>
+    </div>
+    <div class="w-50 text-right">
+      <dl>
+        <dt>S.P.E.C.I.A.L.</dt>
+        <dd>Strength: ${special[0]}</dd>
+        <dd>Perception: ${special[1]}</dd>
+        <dd>Endurance: ${special[2]}</dd>
+        <dd>Charisma: ${special[3]}</dd>
+        <dd>Intelligence: ${special[4]}</dd>
+        <dd>Agility: ${special[5]}</dd>
+        <dd>Luck: ${special[6]}</dd>
+      </dl>
+    </div>`
+  );
+}
+
 function diceRoller() {
   loyalty = listPicker(majorFactions);
   mainSidekick = listPicker(companions);
@@ -148,44 +179,9 @@ function diceRoller() {
   mainSettlement = listPicker(settlements);
 
   specialBuilder();
-
   companionChecker();
-
   imgSetter();
+  postBuild();
 }
 
 diceRoller();
-
-$('.character-attributes').html(
-  `<div>
-    <dl>
-      <dt>Protagonist</dt>
-      <dd>${protagonist}</dd>
-      <dt>Loyalty</dt>
-      <dd>${loyalty}</dd>
-      <dt>Base of Opperations</dt>
-      <dd>${mainSettlement}</dd>
-      <dt>Main Sidekick</dt>
-      <dd>${mainSidekick}</dd>
-      <dt>Preferred Weapon Type</dt>
-      <dd>${preferredWeapon}</dd>
-      <dt>Combat Style</dt>
-      <dd>${combatStyle}</dd>
-    </dl>
-  </div>`
-);
-
-$('.character-attributes').append(
-  `<div class="w-50 text-right">
-    <dl>
-      <dt>S.P.E.C.I.A.L.</dt>
-      <dd>Strength: ${special[0]}</dd>
-      <dd>Perception: ${special[1]}</dd>
-      <dd>Endurance: ${special[2]}</dd>
-      <dd>Charisma: ${special[3]}</dd>
-      <dd>Intelligence: ${special[4]}</dd>
-      <dd>Agility: ${special[5]}</dd>
-      <dd>Luck: ${special[6]}</dd>
-    </dl>
-  </div>`
-);
