@@ -73,6 +73,13 @@ const settlements = [
   'Nuka-World Red Rocket (Nuka-World DLC)',
 ];
 const combatStyles = ['Stealthy Assassin', 'Boisterous Murderer!'];
+let loyalty;
+let mainSidekick;
+let combatStyle;
+let protagonist;
+let preferredWeapon;
+let mainSettlement;
+let special = [];
 
 function getRandomSpecial(min, max) {
   min = Math.ceil(min);
@@ -93,13 +100,6 @@ function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
-let loyalty;
-let mainSidekick;
-let combatStyle;
-let protagonist;
-let preferredWeapon;
-let mainSettlement;
-let special = [];
 
 // build valid special array
 function specialBuilder() {
@@ -129,6 +129,16 @@ function companionChecker() {
   }
 }
 
+function imgSetter() {
+  for (let i = 0; i < sex.length; i += 1) {
+    if (protagonist === 'Female') {
+      $('.character-img img').attr('src', 'img/female-character.png');
+    } else {
+      $('.character-img img').attr('src', 'img/male-character.png');
+    }
+  }
+}
+
 function diceRoller() {
   loyalty = listPicker(majorFactions);
   mainSidekick = listPicker(companions);
@@ -140,21 +150,11 @@ function diceRoller() {
   specialBuilder();
 
   companionChecker();
+
+  imgSetter();
 }
 
 diceRoller();
-
-for (let i = 0; i < sex.length; i += 1) {
-  if (protagonist === 'Female') {
-    $('.character-img').html(
-      `<img class="card-img-top" src="img/female-character.png" alt="Fallout 4 Character"/>`
-    );
-  } else {
-    $('.character-img').html(
-      `<img class="card-img-top" src="img/male-character.png" alt="Fallout 4 Character"/>`
-    );
-  }
-}
 
 $('.character-attributes').html(
   `<div>
