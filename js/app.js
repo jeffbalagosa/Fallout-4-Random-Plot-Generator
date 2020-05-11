@@ -83,47 +83,66 @@ function getRandomSpecial(min, max) {
 // generate random S.P.E.C.I.A.L. numbers
 function specialArrayBuilder() {
   const array = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 7; i += 1) {
     array.push(getRandomSpecial(1, 28));
   }
   return array;
 }
 
-// build valid special array
-let special = [];
-do {
-  special = specialArrayBuilder();
-} while (
-  special.reduce(function (a, b) {
-    return a + b;
-  }, 0) !== 28
-);
-
 function listPicker(array) {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
 }
-const loyalty = listPicker(majorFactions);
-let mainSidekick = listPicker(companions);
-const combatStyle = listPicker(combatStyles);
-const protagonist = listPicker(sex);
-const preferredWeapon = listPicker(preferredWeapons);
-const mainSettlement = listPicker(settlements);
+let loyalty;
+let mainSidekick;
+let combatStyle;
+let protagonist;
+let preferredWeapon;
+let mainSettlement;
+let special = [];
+
+// build valid special array
+function specialBuilder() {
+  do {
+    special = specialArrayBuilder();
+  } while (
+    special.reduce(function (a, b) {
+      return a + b;
+    }, 0) !== 28
+  );
+}
 
 // check if loyalty is compatible with mainsideKick
-for (let i = 0; i < majorFactions.length; i += 1) {
-  if (
-    (loyalty === 'The Institue' &&
-      (mainSidekick === 'Deacon' || mainSidekick === 'PaladinDance')) ||
-    (loyalty === 'The Railroad' &&
-      (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
-    (loyalty === 'The Brotherhood of Steel' &&
-      (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
-    (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
-  ) {
-    mainSidekick = listPicker(companions);
+function companionChecker() {
+  for (let i = 0; i < majorFactions.length; i += 1) {
+    if (
+      (loyalty === 'The Institue' &&
+        (mainSidekick === 'Deacon' || mainSidekick === 'PaladinDance')) ||
+      (loyalty === 'The Railroad' &&
+        (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
+      (loyalty === 'The Brotherhood of Steel' &&
+        (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
+      (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
+    ) {
+      mainSidekick = listPicker(companions);
+    }
   }
 }
+
+function diceRoller() {
+  loyalty = listPicker(majorFactions);
+  mainSidekick = listPicker(companions);
+  combatStyle = listPicker(combatStyles);
+  protagonist = listPicker(sex);
+  preferredWeapon = listPicker(preferredWeapons);
+  mainSettlement = listPicker(settlements);
+
+  specialBuilder();
+
+  companionChecker();
+}
+
+diceRoller();
 
 for (let i = 0; i < sex.length; i += 1) {
   if (protagonist === 'Female') {
