@@ -185,3 +185,7 @@ function diceRoller() {
 }
 
 diceRoller();
+
+$('.re-roll').on('click', function () {
+  diceRoller();
+});
