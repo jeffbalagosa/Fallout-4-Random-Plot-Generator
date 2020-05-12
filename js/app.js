@@ -87,6 +87,11 @@ function getRandomSpecial(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function listPicker(array) {
+  const listItem = Math.floor(Math.random() * Math.floor(array.length));
+  return array[listItem];
+}
+
 // generate random S.P.E.C.I.A.L. numbers
 function specialArrayBuilder() {
   const array = [];
@@ -94,11 +99,6 @@ function specialArrayBuilder() {
     array.push(getRandomSpecial(1, 28));
   }
   return array;
-}
-
-function listPicker(array) {
-  const listItem = Math.floor(Math.random() * Math.floor(array.length));
-  return array[listItem];
 }
 
 // build valid special array
