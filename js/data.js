@@ -2682,7 +2682,7 @@ const maleFirstNames = [
 let loyalty;
 let mainSidekick;
 let combatStyle;
-let protagonist;
+let gender;
 let preferredWeapon;
 let mainSettlement;
 let special = [];

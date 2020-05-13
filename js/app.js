@@ -46,7 +46,7 @@ function companionChecker() {
 
 function imgSetter() {
   for (let i = 0; i < sex.length; i += 1) {
-    if (protagonist === 'Female') {
+    if (gender === 'Female') {
       $('.character-img img').attr('src', 'img/female-character.png');
     } else {
       $('.character-img img').attr('src', 'img/male-character.png');
@@ -92,7 +92,7 @@ function diceRoller() {
   loyalty = listPicker(majorFactions);
   mainSidekick = listPicker(companions);
   combatStyle = listPicker(combatStyles);
-  protagonist = listPicker(sex);
+  gender = listPicker(sex);
   preferredWeapon = listPicker(preferredWeapons);
   mainSettlement = listPicker(settlements);
 
