@@ -2686,3 +2686,5 @@ let protagonist;
 let preferredWeapon;
 let mainSettlement;
 let special = [];
+let lastName;
+let firstName;
