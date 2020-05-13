@@ -59,7 +59,7 @@ function postBuild() {
     `<div>
       <dl>
         <dt>Protagonist</dt>
-        <dd>${protagonist}</dd>
+        <dd>${lastName}</dd>
         <dt>Main Sidekick</dt>
         <dd>${mainSidekick}</dd>
         <dt>Faction Loyalty</dt>
@@ -88,6 +88,7 @@ function postBuild() {
 }
 
 function diceRoller() {
+  lastName = listPicker(lastNames);
   loyalty = listPicker(majorFactions);
   mainSidekick = listPicker(companions);
   combatStyle = listPicker(combatStyles);
