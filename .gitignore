@@ -3,3 +3,4 @@ goals.txt
 package-lock.json
 .eslintrc.json
 .prettierrc
+.prettierignore
