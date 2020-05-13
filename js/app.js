@@ -48,8 +48,20 @@ function imgSetter() {
   for (let i = 0; i < sex.length; i += 1) {
     if (gender === 'Female') {
       $('.character-img img').attr('src', 'img/female-character.png');
+      firstName = listPicker(femaleFirstNames);
     } else {
       $('.character-img img').attr('src', 'img/male-character.png');
+      firstName = listPicker(maleFirstNames);
+    }
+  }
+}
+
+function firstNameSetter() {
+  for (let i = 0; i < sex.length; i += 1) {
+    if (gender === 'Female') {
+      firstName = listPicker(femaleFirstNames);
+    } else {
+      firstName = listPicker(maleFirstNames);
     }
   }
 }
@@ -59,7 +71,7 @@ function postBuild() {
     `<div>
       <dl>
         <dt>Protagonist</dt>
-        <dd>${lastName}</dd>
+        <dd>${firstName} ${lastName}</dd>
         <dt>Main Sidekick</dt>
         <dd>${mainSidekick}</dd>
         <dt>Faction Loyalty</dt>
@@ -88,14 +100,14 @@ function postBuild() {
 }
 
 function diceRoller() {
+  gender = listPicker(sex);
+  firstName = firstNameSetter();
   lastName = listPicker(lastNames);
   loyalty = listPicker(majorFactions);
   mainSidekick = listPicker(companions);
   combatStyle = listPicker(combatStyles);
-  gender = listPicker(sex);
   preferredWeapon = listPicker(preferredWeapons);
   mainSettlement = listPicker(settlements);
-
   specialBuilder();
   companionChecker();
   imgSetter();
