@@ -32,7 +32,7 @@ function specialBuilder() {
 // check if loyalty is compatible with mainsideKick
 function companionChecker() {
   if (
-    (loyalty === 'The Institue' &&
+    (loyalty === 'The Institute' &&
       (mainSidekick === 'Deacon' || mainSidekick === 'Paladin Danse')) ||
     (loyalty === 'The Railroad' &&
       (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
