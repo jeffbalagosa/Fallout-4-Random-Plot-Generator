@@ -3,7 +3,7 @@ h1 {
 }
 
 .jumbotron {
-  background-image: url("../img/top-banner.jpg");
+  background-image: url("../../img/top-banner.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
