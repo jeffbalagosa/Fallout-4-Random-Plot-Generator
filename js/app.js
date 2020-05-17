@@ -2689,11 +2689,11 @@ let special = [];
 let lastName;
 let firstName;
 
-const getRandomSpecial = (min, max) => {
+function getRandomSpecial(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
 
 const listPicker = (array) => {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
