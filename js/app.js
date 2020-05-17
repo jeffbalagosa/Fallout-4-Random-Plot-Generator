@@ -2695,10 +2695,10 @@ const getRandomSpecial = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function listPicker(array) {
+const listPicker = (array) => {
   const listItem = Math.floor(Math.random() * Math.floor(array.length));
   return array[listItem];
-}
+};
 
 // generate random S.P.E.C.I.A.L. numbers
 function specialArrayBuilder() {
