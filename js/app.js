@@ -2721,7 +2721,7 @@ function specialBuilder() {
 // sets a companion who is compatible with the faction your are loyal to.
 function companionSetter() {
   for (let i = 0; i < majorFactions.length; i += 1) {
-    const element = majorFactions[i];
+    const element = loyalty;
     if (
       (element === 'The Institute' &&
         (mainSidekick === 'Deacon' || mainSidekick === 'Paladin Danse')) ||
@@ -2734,7 +2734,6 @@ function companionSetter() {
       mainSidekick = listPicker(companions);
     }
   }
-  return mainSidekick;
 }
 
 function imgSetter() {
