@@ -2718,9 +2718,9 @@ function specialBuilder() {
   );
 }
 
-// check if loyalty is compatible with mainsideKick
-function companionChecker() {
-  for (let i = 0; i < majorFactions.length; i++) {
+// sets a companion who is compatible with the faction your are loyal to.
+function companionSetter() {
+  for (let i = 0; i < majorFactions.length; i += 1) {
     const element = majorFactions[i];
     if (
       (element === 'The Institute' &&
@@ -2802,7 +2802,7 @@ function diceRoller() {
   preferredWeapon = listPicker(preferredWeapons);
   mainSettlement = listPicker(settlements);
   specialBuilder();
-  companionChecker();
+  companionSetter();
   imgSetter();
   postBuild();
 }
