@@ -2720,17 +2720,21 @@ function specialBuilder() {
 
 // check if loyalty is compatible with mainsideKick
 function companionChecker() {
-  if (
-    (loyalty === 'The Institute' &&
-      (mainSidekick === 'Deacon' || mainSidekick === 'Paladin Danse')) ||
-    (loyalty === 'The Railroad' &&
-      (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
-    (loyalty === 'The Brotherhood of Steel' &&
-      (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
-    (loyalty === 'The Minutemen' && mainSidekick === 'X6-88')
-  ) {
-    mainSidekick = listPicker(companions);
+  for (let i = 0; i < majorFactions.length; i++) {
+    const element = majorFactions[i];
+    if (
+      (element === 'The Institute' &&
+        (mainSidekick === 'Deacon' || mainSidekick === 'Paladin Danse')) ||
+      (element === 'The Railroad' &&
+        (mainSidekick === 'X6-88' || mainSidekick === 'Paladin Danse')) ||
+      (element === 'The Brotherhood of Steel' &&
+        (mainSidekick === 'X6-88' || mainSidekick === 'Deacon')) ||
+      (element === 'The Minutemen' && mainSidekick === 'X6-88')
+    ) {
+      mainSidekick = listPicker(companions);
+    }
   }
+  return mainSidekick;
 }
 
 function imgSetter() {
