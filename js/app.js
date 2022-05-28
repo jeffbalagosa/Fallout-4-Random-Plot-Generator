@@ -1,5 +1,5 @@
 const sex = ["Male", "Female"];
-const majorFactions = [
+const factionArr = [
   "The Minutemen",
   "The Institute",
   "The Railroad",
@@ -2679,7 +2679,7 @@ const maleFirstNames = [
   "Rod",
   "Quinton",
 ];
-let loyalty;
+let faction;
 let mainSidekick;
 let combatStyle;
 let gender;
@@ -2721,16 +2721,16 @@ function specialBuilder() {
 
 // sets a companion who is compatible with the faction your are loyal to.
 function companionSetter() {
-  for (let i = 0; i < majorFactions.length; i += 1) {
-    const element = loyalty;
+  for (let i = 0; i < factionArr.length; i += 1) {
+    const factionLoyalTo = faction;
     if (
-      (element === "The Institute" &&
+      (factionLoyalTo === "The Institute" &&
         (mainSidekick === "Deacon" || mainSidekick === "Paladin Danse")) ||
-      (element === "The Railroad" &&
+      (factionLoyalTo === "The Railroad" &&
         (mainSidekick === "X6-88" || mainSidekick === "Paladin Danse")) ||
-      (element === "The Brotherhood of Steel" &&
+      (factionLoyalTo === "The Brotherhood of Steel" &&
         (mainSidekick === "X6-88" || mainSidekick === "Deacon")) ||
-      (element === "The Minutemen" && mainSidekick === "X6-88")
+      (factionLoyalTo === "The Minutemen" && mainSidekick === "X6-88")
     ) {
       mainSidekick = listPicker(companions);
     }
@@ -2768,7 +2768,7 @@ function postBuild() {
         <dt>Main Sidekick</dt>
         <dd>${mainSidekick}</dd>
         <dt>Faction Loyalty</dt>
-        <dd>${loyalty}</dd>
+        <dd>${faction}</dd>
         <dt>Base of Opperations</dt>
         <dd>${mainSettlement}</dd>
         <dt>Preferred Weapon Type</dt>
@@ -2796,7 +2796,7 @@ function diceRoller() {
   gender = listPicker(sex);
   firstName = firstNameSetter();
   lastName = listPicker(lastNames);
-  loyalty = listPicker(majorFactions);
+  faction = listPicker(factionArr);
   mainSidekick = listPicker(companions);
   combatStyle = listPicker(combatStyles);
   preferredWeapon = listPicker(preferredWeapons);
